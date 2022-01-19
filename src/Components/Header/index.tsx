@@ -1,11 +1,22 @@
+// packages
 import React from 'react'
-import logo from '../../assets/img/logo.svg'
+
+// style
+import style from './style.module.scss'
+
+// images
+import logo from '../../assets/img/logo.png'
 
 const Header: React.FC = () => {
   return (
-    <>
-      <img src={logo} className="App-logo" alt="logo" />
-    </>
+    <div className={style.container}>
+      <div className={style.content}>
+        <img src={logo} className={style.logo} alt="logo" />
+        <div className={style.cart}>
+          <span>cart</span>
+        </div>
+      </div>
+    </div>
   )
 }
 

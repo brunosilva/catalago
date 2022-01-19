@@ -1,0 +1,24 @@
+.container {
+  background: var(--black);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .content {
+    max-width: 95%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+    .logo {
+      height: 100px;
+    }
+
+    .cart {
+      justify-content: flex-end;
+      color: var(--white);
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .content {
+    max-width: 95%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap !important;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    .menu {
+      width: 270px;
+      height: 100px;
+      margin: 10px 20px;
+      border: 1px solid #ddd;
+
+      .logo {
+        width: 100%;
+        max-height: 100%;
+      }
+
+      .cart {
+        justify-content: flex-end;
+        color: var(--white);
+      }
+    }
+  }
+}

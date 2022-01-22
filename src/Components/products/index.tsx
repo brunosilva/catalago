@@ -1,39 +1,34 @@
 // packages
-import React, { useState, useEffect } from 'react'
-import { api } from '../../services/api'
+import React from 'react'
+import { IProduct } from '../../shared/type'
+import Empty from '../Empty'
 
 // style
 import style from './style.module.scss'
 
-interface IProduct {
-  id: string
-  category: string
-  name: string
-  description: string
-  image: string
-}
-
 interface IProps {
   category: string
+  products: IProduct[]
 }
-const Products: React.FC<IProps> = ({ category }) => {
-  const [products, setProducts] = useState<IProduct[]>([])
 
-  useEffect(() => {
-    api.get<IProduct[]>(`/${category}`).then(response => {
-      setProducts(response.data)
-    })
-  }, [category])
+const Products: React.FC<IProps> = ({ category, products }) => {
   return (
     <div className={style.container}>
-      <div className={style.content}>
-        {products.map(item => (
-          <a href={item.id}>
-            <img src={item.image} alt="" />
-            <span>{item.name}</span>
-          </a>
-        ))}
-      </div>
+      {category !== 'empty' ? (
+        <>
+          <h1>{category}</h1>
+          <div className={style.content}>
+            {products.map(item => (
+              <button type="button" onClick={() => item.id}>
+                <img src={item.image} alt="" />
+                <span>{item.name}</span>
+              </button>
+            ))}
+          </div>
+        </>
+      ) : (
+        <Empty />
+      )}
     </div>
   )
 }

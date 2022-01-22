@@ -13,7 +13,6 @@ interface IProps {
 const Options: React.FC<IProps> = ({ setCategory }) => {
   const handleCategory = useCallback(
     (value: string) => {
-      console.log('category-options', value)
       setCategory(value)
     },
     [setCategory]
@@ -23,11 +22,11 @@ const Options: React.FC<IProps> = ({ setCategory }) => {
     <div className={style.container}>
       <div className={style.content}>
         {optionsMenu.map(item => (
-          <a href={`${handleCategory(item.value)}`}>
+          <button type="button" onClick={() => handleCategory(item.value)}>
             <div className={style.menu}>
               <span>{item.text}</span>
             </div>
-          </a>
+          </button>
         ))}
       </div>
     </div>

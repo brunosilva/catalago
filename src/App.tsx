@@ -1,11 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Components/Header'
+import { api } from '../src/services/api'
 import '../src/style/global.scss'
 import Options from './Components/Options'
 import Products from './Components/products'
+import { IProduct } from './shared/type'
 
 function App() {
-  const [category, setCategory] = useState('')
+  const [category, setCategory] = useState('empty')
+  const [products, setProducts] = useState<IProduct[]>([])
+
+  useEffect(() => {
+    api.get<IProduct[]>(`/${category}`).then(response => {
+      console.log('category=app', category)
+      console.log('products', response.data)
+      setProducts(response.data)
+    })
+  }, [category])
 
   return (
     <div className="App">
@@ -15,7 +26,7 @@ function App() {
           <Options setCategory={setCategory} />
         </div>
         <div className="content">
-          <Products category="cangas" />
+          <Products category={category} products={products} />
         </div>
       </div>
     </div>

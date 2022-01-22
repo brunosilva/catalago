@@ -5,8 +5,47 @@
   --yellow-300: #c0af52;
   --yellow-400: #8f833d;
   --yellow-700: #5c5436;
+
+  --grey-500: #616161;
 }
 
 * {
   margin: 0;
+}
+
+.container {
+  display: flex;
+
+  .sidebar {
+    width: 280px;
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    &::-webkit-scrollbar {
+      background-color: var(--white) !important;
+      width: 4px !important;
+    }
+
+    &::-webkit-scrollbar-button {
+      display: none !important;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: var(--white) !important;
+    }
+
+    &::-webkit-scrollbar-track-piece {
+      background-color: var(--white) !important;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--grey-500) !important;
+      border-radius: 12px !important;
+    }
+  }
+
+  .content {
+    padding: 15px;
+  }
 }

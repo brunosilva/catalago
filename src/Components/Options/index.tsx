@@ -1,5 +1,5 @@
 // packages
-import React from 'react'
+import React, { useCallback } from 'react'
 
 // utils
 import { optionsMenu } from './utils'
@@ -7,12 +7,23 @@ import { optionsMenu } from './utils'
 // style
 import style from './style.module.scss'
 
-const Options: React.FC = () => {
+interface IProps {
+  setCategory: React.Dispatch<React.SetStateAction<string>>
+}
+const Options: React.FC<IProps> = ({ setCategory }) => {
+  const handleCategory = useCallback(
+    (value: string) => {
+      console.log('category-options', value)
+      setCategory(value)
+    },
+    [setCategory]
+  )
+
   return (
     <div className={style.container}>
       <div className={style.content}>
         {optionsMenu.map(item => (
-          <a href={item.value}>
+          <a href={`${handleCategory(item.value)}`}>
             <div className={style.menu}>
               <span>{item.text}</span>
             </div>

@@ -1,0 +1,74 @@
+{
+  "cangas": [
+    {
+      "id": "1",
+      "category": "canga",
+      "name": "Cng 01",
+      "description": " ",
+      "image": "images/canga/canga01.jpg"
+    },
+    {
+      "id": "2",
+      "category": "canga",
+      "name": "Cng 02",
+      "description": " ",
+      "image": "images/canga/canga02.jpg"
+    },
+    {
+      "id": "3",
+      "category": "canga",
+      "name": "Cng 03",
+      "description": " ",
+      "image": "images/canga/canga03.jpg"
+    },
+    {
+      "id": "4",
+      "category": "canga",
+      "name": "Cng 04",
+      "description": " ",
+      "image": "images/canga/canga04.jpg"
+    },
+    {
+      "id": "5",
+      "category": "canga",
+      "name": "Cng 05",
+      "description": " ",
+      "image": "images/canga/canga05.jpg"
+    },
+    {
+      "id": "6",
+      "category": "canga",
+      "name": "Cng 06",
+      "description": " ",
+      "image": "images/canga/canga06.jpg"
+    },
+    {
+      "id": "7",
+      "category": "canga",
+      "name": "Cng 07",
+      "description": " ",
+      "image": "images/canga/canga07.jpg"
+    },
+    {
+      "id": "8",
+      "category": "canga",
+      "name": "Cng 08",
+      "description": " ",
+      "image": "images/canga/canga08.jpg"
+    },
+    {
+      "id": "9",
+      "category": "canga",
+      "name": "Cng 09",
+      "description": " ",
+      "image": "images/canga/canga09.jpg"
+    },
+    {
+      "id": "10",
+      "category": "canga",
+      "name": "Cng 10",
+      "description": " ",
+      "image": "images/canga/canga10.jpg"
+    }
+  ]
+}

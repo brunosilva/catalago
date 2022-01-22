@@ -70,5 +70,28 @@
       "description": " ",
       "image": "images/canga/canga10.jpg"
     }
+  ],
+  "broches": [
+    {
+      "id": "1",
+      "category": "broche",
+      "name": "Cng 01",
+      "description": " ",
+      "image": "images/broche/broche01.jpg"
+    },
+    {
+      "id": "2",
+      "category": "broche",
+      "name": "Cng 02",
+      "description": " ",
+      "image": "images/broche/Cvr01.jpg"
+    },
+    {
+      "id": "3",
+      "category": "broche",
+      "name": "Cng 03",
+      "description": " ",
+      "image": "images/broche/Cvr02.jpg"
+    }
   ]
 }

@@ -32,7 +32,7 @@ export const optionsMenu = [
     text:"Profissão"
   },
   {
-    value:"canga",
+    value:"cangas",
     text:"Canga"
   },
   {

@@ -26,6 +26,16 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: all 0.5s;
+
+      &:hover {
+        background-color: var(--yellow-400);
+
+        span {
+          font-weight: 700;
+          color: var(--white) !important;
+        }
+      }
 
       span {
         font-weight: 600;

@@ -1,5 +1,9 @@
 export const optionsMenu = [
   {
+    value:"empty",
+    text:"Home"
+  },
+  {
     value:"lançamentos",
     text:"Lançamentos"
   },

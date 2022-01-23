@@ -17,14 +17,20 @@ const Products: React.FC<IProps> = ({ category, products }) => {
       {category !== 'empty' ? (
         <>
           <h1>{category}</h1>
-          <div className={style.content}>
-            {products.map(item => (
-              <button type="button" onClick={() => item.id}>
-                <img src={item.image} alt="" />
-                <span>{item.name}</span>
-              </button>
-            ))}
-          </div>
+          {!products ? (
+            <span className={style.withoutProducts}>
+              Categoria sem produtos
+            </span>
+          ) : (
+            <div className={style.content}>
+              {products.map(item => (
+                <button type="button" onClick={() => item.id}>
+                  <img src={item.image} alt="" />
+                  <span>{item.name}</span>
+                </button>
+              ))}
+            </div>
+          )}
         </>
       ) : (
         <Empty />

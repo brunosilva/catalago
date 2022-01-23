@@ -2,6 +2,13 @@
   width: calc(100vw - 280px);
   display: flex;
   justify-content: center;
+  flex-direction: column;
+
+  .withoutProducts {
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
 
   .content {
     width: 100%;

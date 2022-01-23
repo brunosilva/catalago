@@ -1,5 +1,9 @@
 export const optionsMenu = [
   {
+    value:"empty",
+    text:"Home"
+  },
+  {
     value:"lançamentos",
     text:"Lançamentos"
   },
@@ -32,7 +36,7 @@ export const optionsMenu = [
     text:"Profissão"
   },
   {
-    value:"canga",
+    value:"cangas",
     text:"Canga"
   },
   {

@@ -3,7 +3,7 @@ import Header from './Components/Header'
 import { api } from '../src/services/api'
 import '../src/style/global.scss'
 import Options from './Components/Options'
-import Products from './Components/products'
+import Products from './Components/Products'
 import { IProduct } from './shared/type'
 
 function App() {
@@ -12,8 +12,6 @@ function App() {
 
   useEffect(() => {
     api.get<IProduct[]>(`/${category}`).then(response => {
-      console.log('category=app', category)
-      console.log('products', response.data)
       setProducts(response.data)
     })
   }, [category])

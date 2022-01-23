@@ -52,7 +52,7 @@ export const optionsMenu = [
     text:"Esporte/Fitness"
   },
   {
-    value:"aneis",
+    value:"anel",
     text:"Aneis"
   },
   {

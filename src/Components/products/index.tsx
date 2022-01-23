@@ -1,5 +1,5 @@
 // packages
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import { IProduct } from '../../shared/type'
 import Empty from '../Empty'
 
@@ -12,6 +12,11 @@ interface IProps {
 }
 
 const Products: React.FC<IProps> = ({ category, products }) => {
+  const [addProduct, setAddProduct] = useState()
+
+  const handleProduct = useCallback((value: string) => {
+    console.log('value product', value)
+  }, [])
   return (
     <div className={style.container}>
       {category !== 'empty' ? (
@@ -24,7 +29,7 @@ const Products: React.FC<IProps> = ({ category, products }) => {
           ) : (
             <div className={style.content}>
               {products.map(item => (
-                <button type="button" onClick={() => item.id}>
+                <button type="button" onClick={() => handleProduct(item.id)}>
                   <img src={item.image} alt="" />
                   <span>{item.name}</span>
                 </button>

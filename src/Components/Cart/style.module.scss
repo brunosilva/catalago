@@ -1,0 +1,14 @@
+.container {
+  width: calc(100vw - 280px);
+  display: flex;
+  justify-content: center;
+
+  .productList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+}

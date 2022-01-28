@@ -1,33 +1,35 @@
-import React, { useEffect, useState } from 'react'
+// packages
+import React, { useState } from 'react'
+import { Provider } from 'react-redux'
+
+// redux
+import store from './store'
+
+// components
 import Header from './Components/Header'
-import { api } from '../src/services/api'
-import '../src/style/global.scss'
 import Options from './Components/Options'
 import Products from './Components/Products'
-import { IProduct } from './shared/type'
+
+// style
+import '../src/style/global.scss'
 
 function App() {
   const [category, setCategory] = useState('empty')
-  const [products, setProducts] = useState<IProduct[]>([])
-
-  useEffect(() => {
-    api.get<IProduct[]>(`/${category}`).then(response => {
-      setProducts(response.data)
-    })
-  }, [category])
 
   return (
-    <div className="App">
-      <Header />
-      <div className="container">
-        <div className="sidebar">
-          <Options setCategory={setCategory} />
-        </div>
-        <div className="content">
-          <Products category={category} products={products} />
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <div className="container">
+          <div className="sidebar">
+            <Options setCategory={setCategory} />
+          </div>
+          <div className="content">
+            <Products category={category} />
+          </div>
         </div>
       </div>
-    </div>
+    </Provider>
   )
 }
 

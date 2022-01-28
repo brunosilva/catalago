@@ -12,6 +12,7 @@ import Products from './Components/Products'
 
 // style
 import '../src/style/global.scss'
+import Cart from './Components/Cart'
 
 function App() {
   const [category, setCategory] = useState('empty')
@@ -20,6 +21,7 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <Header />
+        <Cart />
         <div className="container">
           <div className="sidebar">
             <Options setCategory={setCategory} />

@@ -1,69 +1,69 @@
 export const cangas = [
   {
-    id: "canga001",
+    id: "Cng01",
     category: "canga",
     name: "Cng 01",
     description: " ",
     image: "images/canga/canga01.jpg"
   },
   {
-    id: "canga002",
+    id: "Cng02",
     category: "canga",
     name: "Cng 02",
     description: " ",
     image: "images/canga/canga02.jpg"
   },
   {
-    id: "canga003",
+    id: "Cng03",
     category: "canga",
     name: "Cng 03",
     description: " ",
     image: "images/canga/canga03.jpg"
   },
   {
-    id: "canga004",
+    id: "Cng04",
     category: "canga",
     name: "Cng 04",
     description: " ",
     image: "images/canga/canga04.jpg"
   },
   {
-    id: "canga005",
+    id: "Cng05",
     category: "canga",
     name: "Cng 05",
     description: " ",
     image: "images/canga/canga05.jpg"
   },
   {
-    id: "canga006",
+    id: "Cng06",
     category: "canga",
     name: "Cng 06",
     description: " ",
     image: "images/canga/canga06.jpg"
   },
   {
-    id: "canga007",
+    id: "Cng07",
     category: "canga",
     name: "Cng 07",
     description: " ",
     image: "images/canga/canga07.jpg"
   },
   {
-    id: "canga008",
+    id: "Cng08",
     category: "canga",
     name: "Cng 08",
     description: " ",
     image: "images/canga/canga08.jpg"
   },
   {
-    id: "canga009",
+    id: "Cng09",
     category: "canga",
     name: "Cng 09",
     description: " ",
     image: "images/canga/canga09.jpg"
   },
   {
-    id: "canga010",
+    id: "Cng10",
     category: "canga",
     name: "Cng 10",
     description: " ",

@@ -34,7 +34,6 @@ const Products: React.FC<IProps> = ({ category }) => {
   const [addProduct, setAddProduct] = useState()
   const [products, setProducts] = useState<IProduct[]>([])
 
-  console.log(catalog)
   useEffect(() => {
     if (category === 'cangas') setProducts(cangas)
     if (category === 'broches') setProducts(broches)
@@ -63,7 +62,7 @@ const Products: React.FC<IProps> = ({ category }) => {
           ) : (
             <div className={style.content}>
               {products.map(item => (
-                <div key={item.id}>
+                <div className={style.productCard} key={item.id}>
                   <img src={item.image} alt="" />
                   <span>{item.name}</span>
                   <button

@@ -65,6 +65,7 @@ const Products: React.FC<IProps> = ({ category }) => {
                 <div className={style.productCard} key={item.id}>
                   <img src={item.image} alt="" />
                   <span>{item.name}</span>
+                  {/* <input type="number" name="quantity" /> */}
                   <button
                     type="button"
                     onClick={() => handleAddProductToCart(item)}

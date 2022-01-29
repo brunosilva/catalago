@@ -1,9 +1,8 @@
 // packages
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 // redux
-import { useDispatch, useSelector } from 'react-redux'
-import { addProductToCart } from '../../store/modules/cart/actions'
+import { useSelector } from 'react-redux'
 
 // components
 import Empty from '../Empty'
@@ -23,13 +22,13 @@ import {
 
 // style
 import style from './style.module.scss'
+import CatalogItem from '../CatalogItem'
 
 interface IProps {
   category: string
 }
 
 const Products: React.FC<IProps> = ({ category }) => {
-  const dispatch = useDispatch()
   const catalog = useSelector(state => state)
   const [addProduct, setAddProduct] = useState()
   const [products, setProducts] = useState<IProduct[]>([])
@@ -43,13 +42,6 @@ const Products: React.FC<IProps> = ({ category }) => {
     if (category === 'gargantilhas') setProducts(gargantilhas)
   }, [category])
 
-  const handleAddProductToCart = useCallback(
-    (product: IProduct) => {
-      dispatch(addProductToCart(product))
-    },
-    [dispatch]
-  )
-
   return (
     <div className={style.container}>
       {category !== 'empty' ? (
@@ -61,18 +53,8 @@ const Products: React.FC<IProps> = ({ category }) => {
             </span>
           ) : (
             <div className={style.content}>
-              {products.map(item => (
-                <div className={style.productCard} key={item.id}>
-                  <img src={item.image} alt="" />
-                  <span>{item.name}</span>
-                  {/* <input type="number" name="quantity" /> */}
-                  <button
-                    type="button"
-                    onClick={() => handleAddProductToCart(item)}
-                  >
-                    Adicionar ao carrinho
-                  </button>
-                </div>
+              {products.map(product => (
+                <CatalogItem key={product.id} product={product} />
               ))}
             </div>
           )}

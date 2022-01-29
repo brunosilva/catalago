@@ -42,17 +42,5 @@
       background-color: var(--grey-500) !important;
       border-radius: 12px !important;
     }
-
-    .productCard {
-      width: 260px;
-      text-decoration: none;
-      margin: 10px;
-      border: 1px solid var(--yellow-300);
-      cursor: pointer;
-
-      img {
-        max-width: 100%;
-      }
-    }
   }
 }

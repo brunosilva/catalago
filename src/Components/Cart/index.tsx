@@ -11,16 +11,41 @@ const Cart: React.FC = () => {
   const cart = useSelector<IState, ICartItem[]>(state => state.cart.items)
   return (
     <div className={style.container}>
-      <h1>cart</h1>
+      <div className={style.header}>
+        <span>Produtos no Carrinho</span>
+        <span>{'[ x ]'}</span>
+      </div>
       <div className={style.productList}>
-        {cart.map(item => (
-          <div key={item.product.id}>
-            <strong>{item.product.id}</strong>
-            <strong>{item.product.name}</strong>
-            <span>{item.product.category}</span>
-            <span>{item.quantity}</span>
+        <div className={style.productListHeader}>
+          <div className={style.img}></div>
+          <div className={style.description}>
+            <div className={style.name}>
+              <small>Produto</small>
+            </div>
+            <div className={style.category}>
+              <small>Categoria</small>
+            </div>
           </div>
-        ))}
+        </div>
+        <div className={style.list}>
+          {cart.map(item => (
+            <div className={style.item} key={item.product.id}>
+              <img
+                src={item.product.image}
+                className={style.image}
+                title={item.product.name}
+              />
+              <div className={style.description}>
+                <div className={style.name}>
+                  <strong>{item.product.name}</strong>
+                </div>
+                <div className={style.category}>
+                  <strong>{item.product.category}</strong>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

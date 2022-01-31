@@ -46,6 +46,9 @@ const Cart: React.FC = () => {
             </div>
           ))}
         </div>
+        <div className={style.send}>
+          <button>ENVIAR PARA WHATSAPP</button>
+        </div>
       </div>
     </div>
   )

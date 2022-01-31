@@ -1,5 +1,5 @@
 // packages
-import React from 'react'
+import React, { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { IState } from '../../store'
 import { ICartItem } from '../../store/modules/cart/types'
@@ -9,6 +9,16 @@ import style from './style.module.scss'
 
 const Cart: React.FC = () => {
   const cart = useSelector<IState, ICartItem[]>(state => state.cart.items)
+
+  const handleSubmit = useCallback(
+    async (values: any) => {
+      console.log(values)
+      const url = `https://api.whatsapp.com/send?phone=5516992623944&text= Bem vindo ao Catalago -->> %0A Qual é o seu nome? %0A ${values.name} - ${cart?.length} .`
+
+      window.open(url)
+    },
+    [cart]
+  )
   return (
     <div className={style.container}>
       <div className={style.header}>
@@ -46,8 +56,26 @@ const Cart: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className={style.send}>
-          <button>ENVIAR PARA WHATSAPP</button>
+        <div className={style.form}>
+          <form
+            onSubmit={handleSubmit as React.FormEventHandler<HTMLFormElement>}
+          >
+            <div>
+              <label htmlFor="name">Nome</label>
+              <input type="text" name="name" />
+            </div>
+            <div>
+              <label htmlFor="email">E-mail</label>
+              <input type="text" name="email" />
+            </div>
+            <div>
+              <label htmlFor="cell">Celular</label>
+              <input type="text" name="cell" />
+            </div>
+            <div className={style.send}>
+              <button>ENVIAR PARA WHATSAPP</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

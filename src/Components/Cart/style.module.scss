@@ -24,9 +24,10 @@
   }
 
   .productList {
-    width: 100%;
+    max-width: 100%;
     display: flex;
-    height: calc(100vh - 70px);
+    min-height: calc(100vh - 70px);
+    max-height: calc(100vh - 50px);
     flex-direction: column;
     align-items: start;
     justify-content: start;
@@ -111,6 +112,27 @@
           font-size: 1.1rem;
           font-weight: 600;
           color: var(--black);
+        }
+      }
+    }
+
+    .form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+
+      form {
+        width: 100%;
+      }
+
+      .send {
+        width: 100%;
+
+        button {
+          width: 100%;
+          padding: 10px;
+          display: flex;
+          justify-content: center;
         }
       }
     }

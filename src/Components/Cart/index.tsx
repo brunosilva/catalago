@@ -59,11 +59,13 @@ const Cart: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className={style.form}>
-          <form
-            onSubmit={handleSubmit as React.FormEventHandler<HTMLFormElement>}
-          >
-            <div>
+
+        {cart.length > 0 && (
+          <div className={style.form}>
+            <form
+              onSubmit={handleSubmit as React.FormEventHandler<HTMLFormElement>}
+            >
+              {/* <div>
               <label htmlFor="name">Nome</label>
               <input type="text" name="name" />
             </div>
@@ -74,12 +76,13 @@ const Cart: React.FC = () => {
             <div>
               <label htmlFor="cell">Celular</label>
               <input type="text" name="cell" />
-            </div>
-            <div className={style.send}>
-              <button>ENVIAR PARA WHATSAPP</button>
-            </div>
-          </form>
-        </div>
+            </div> */}
+              <div className={style.send}>
+                <button>ENVIAR PARA WHATSAPP</button>
+              </div>
+            </form>
+          </div>
+        )}
       </div>
     </div>
   )

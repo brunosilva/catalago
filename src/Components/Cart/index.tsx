@@ -12,8 +12,11 @@ const Cart: React.FC = () => {
 
   const handleSubmit = useCallback(
     async (values: any) => {
-      console.log(values)
-      const url = `https://api.whatsapp.com/send?phone=5516992623944&text= Bem vindo ao Catalago -->> %0A Qual é o seu nome? %0A ${values.name} - ${cart?.length} .`
+      const cartItems = cart.map(item => {
+        return `%0A ${item.product.id} `
+      })
+
+      const url = `https://api.whatsapp.com/send?phone=5516992640926&text= Orçamento de Produtos -->> %0A Produtos? %0A ${cartItems} `
 
       window.open(url)
     },

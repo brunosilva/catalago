@@ -20,13 +20,13 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
+        <Cart />
         <Header />
         <div className="container">
           <div className="sidebar">
             <Options setCategory={setCategory} />
           </div>
           <div className="content">
-            <Cart />
             <Products category={category} />
           </div>
         </div>

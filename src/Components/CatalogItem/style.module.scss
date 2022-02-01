@@ -1,0 +1,13 @@
+.container {
+  .productCard {
+    width: 260px;
+    text-decoration: none;
+    margin: 10px;
+    border: 1px solid var(--yellow-300);
+    cursor: pointer;
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

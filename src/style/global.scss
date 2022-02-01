@@ -36,7 +36,9 @@
     border-radius: 12px !important;
   }
 }
-
+.App {
+  position: relative;
+}
 .container {
   display: flex;
   overflow: hidden;

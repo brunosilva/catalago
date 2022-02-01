@@ -1,14 +1,118 @@
 .container {
-  width: calc(100vw - 280px);
-  display: flex;
-  justify-content: center;
+  width: 300px;
+  display: grid;
+  height: 100vh;
+  right: 0;
+  position: absolute;
+  background: var(--yellow-300);
+
+  .header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    span {
+      width: 50%;
+      padding: 5px;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
 
   .productList {
     width: 100%;
     display: flex;
+    height: calc(100vh - 70px);
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+    align-items: start;
+    justify-content: start;
+    padding: 5px;
+
+    .list {
+      width: 100%;
+      height: 600px;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        background-color: var(--white) !important;
+        width: 4px !important;
+      }
+
+      &::-webkit-scrollbar-button {
+        display: none !important;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: var(--white) !important;
+      }
+
+      &::-webkit-scrollbar-track-piece {
+        background-color: var(--white) !important;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--grey-500) !important;
+        border-radius: 12px !important;
+      }
+    }
+
+    .productListHeader {
+      display: flex;
+      flex-direction: row;
+
+      .img {
+        width: 60px;
+      }
+
+      .description {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--yellow-700);
+        display: flex;
+
+        .name,
+        .category {
+          width: 100px;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+
+    .item {
+      width: 95%;
+      display: flex;
+      padding-bottom: 7px;
+      margin-bottom: 7px;
+      border-bottom: 1px solid var(--yellow-400);
+
+      img {
+        width: 60px;
+        max-height: auto;
+      }
+
+      .description {
+        display: flex;
+        flex-direction: row;
+
+        .name,
+        .category {
+          width: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        strong {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: var(--black);
+        }
+      }
+    }
   }
 }

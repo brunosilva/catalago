@@ -16,12 +16,13 @@ import Cart from './Components/Cart'
 
 function App() {
   const [category, setCategory] = useState('empty')
+  const [showCart, setShowCart] = useState('dnone')
 
   return (
     <Provider store={store}>
       <div className="App">
-        <Cart />
-        <Header />
+        <Cart setShowCart={setShowCart} showCart={showCart} />
+        <Header setShowCart={setShowCart} />
         <div className="container">
           <div className="sidebar">
             <Options setCategory={setCategory} />

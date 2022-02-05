@@ -1,5 +1,5 @@
 // packages
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { IState } from '../../store'
 import { ICartItem } from '../../store/modules/cart/types'
@@ -7,8 +7,20 @@ import { ICartItem } from '../../store/modules/cart/types'
 // style
 import style from './style.module.scss'
 
-const Cart: React.FC = () => {
+interface IProps {
+  setShowCart: React.Dispatch<React.SetStateAction<string>>
+  showCart: string
+}
+
+const Cart: React.FC<IProps> = ({ setShowCart, showCart }) => {
+  const [styleCart, setStyleCart] = useState('')
   const cart = useSelector<IState, ICartItem[]>(state => state.cart.items)
+
+  useEffect(() => {
+    showCart === 'dnone'
+      ? setStyleCart(`${style.containerCart} ${style.dnone}`)
+      : setStyleCart(`${style.containerCart}`)
+  }, [showCart])
 
   const handleSubmit = useCallback(
     async (values: any) => {
@@ -23,10 +35,10 @@ const Cart: React.FC = () => {
     [cart]
   )
   return (
-    <div className={style.container}>
+    <div className={styleCart}>
       <div className={style.header}>
         <span>Produtos no Carrinho</span>
-        <span>{'[ x ]'}</span>
+        <span onClick={() => setShowCart('dnone')}>{'[ x ]'}</span>
       </div>
       <div className={style.productList}>
         <div className={style.productListHeader}>

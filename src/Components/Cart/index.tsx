@@ -6,6 +6,7 @@ import { ICartItem } from '../../store/modules/cart/types'
 
 // style
 import style from './style.module.scss'
+import { formType } from './type'
 
 interface IProps {
   setShowCart: React.Dispatch<React.SetStateAction<string>>
@@ -23,12 +24,12 @@ const Cart: React.FC<IProps> = ({ setShowCart, showCart }) => {
   }, [showCart])
 
   const handleSubmit = useCallback(
-    async (values: any) => {
+    async (values: formType) => {
       const cartItems = cart.map(item => {
-        return `%0A ${item.product.id} `
+        return `%0A *${item.product.id}* `
       })
 
-      const url = `https://api.whatsapp.com/send?phone=5516992640926&text= Orçamento de Produtos -->> %0A Produtos? %0A ${cartItems} `
+      const url = `https://api.whatsapp.com/send?phone=5516992640926&text= %0AOlá *${values.name}*, tudo bem? %0ARecebemos seu contato em breve retornaremos. %0A %0AContatos:  %0A*${values.email}*,%0A*${values.cell}* %0A %0AProdutos? ${cartItems} `
 
       window.open(url)
     },
@@ -75,20 +76,31 @@ const Cart: React.FC<IProps> = ({ setShowCart, showCart }) => {
         {cart.length > 0 && (
           <div className={style.form}>
             <form
-              onSubmit={handleSubmit as React.FormEventHandler<HTMLFormElement>}
+              onSubmit={event => {
+                event.preventDefault()
+                const formData = new FormData(event.currentTarget)
+
+                const formattedValue = {
+                  name: formData.get('name'),
+                  email: formData.get('email'),
+                  cell: formData.get('cell')
+                }
+
+                handleSubmit(formattedValue as formType)
+              }}
             >
-              {/* <div>
-              <label htmlFor="name">Nome</label>
-              <input type="text" name="name" />
-            </div>
-            <div>
-              <label htmlFor="email">E-mail</label>
-              <input type="text" name="email" />
-            </div>
-            <div>
-              <label htmlFor="cell">Celular</label>
-              <input type="text" name="cell" />
-            </div> */}
+              <div>
+                <label htmlFor="name">Nome *</label>
+                <input type="text" name="name" />
+              </div>
+              <div>
+                <label htmlFor="cell">Celular</label>
+                <input type="text" name="cell" />
+              </div>
+              <div>
+                <label htmlFor="email">E-mail</label>
+                <input type="text" name="email" />
+              </div>
               <div className={style.send}>
                 <button>ENVIAR PARA WHATSAPP</button>
               </div>

@@ -27,7 +27,6 @@ const CatalogItem: React.FC<CatalogItemProps> = ({ product }) => {
       <div className={style.productCard}>
         <img src={product.image} alt="" />
         <span>{product.name}</span>
-        {/* <input type="number" name="quantity" /> */}
         <button type="button" onClick={handleAddProductToCart}>
           Adicionar ao carrinho
         </button>

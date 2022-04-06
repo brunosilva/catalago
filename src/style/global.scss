@@ -2,6 +2,7 @@
   --black: #000;
   --white: #fff;
 
+  --yellow-200: #e7d259;
   --yellow-300: #c0af52;
   --yellow-400: #8f833d;
   --yellow-700: #5c5436;
@@ -15,7 +16,7 @@
 
 .scroolbar {
   &::-webkit-scrollbar {
-    background-color: var(--white) !important;
+    background-color: var(--yellow-300) !important;
     width: 4px !important;
   }
 
@@ -24,11 +25,11 @@
   }
 
   &::-webkit-scrollbar-track {
-    background-color: var(--white) !important;
+    background-color: var(--yellow-300) !important;
   }
 
   &::-webkit-scrollbar-track-piece {
-    background-color: var(--white) !important;
+    background-color: var(--yellow-300) !important;
   }
 
   &::-webkit-scrollbar-thumb {
@@ -42,6 +43,7 @@
 .container {
   display: flex;
   overflow: hidden;
+  background-color: var(--yellow-300);
 
   .sidebar {
     width: 280px;

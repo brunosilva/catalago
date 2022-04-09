@@ -23,9 +23,14 @@ function App() {
       <div className="App">
         <Cart setShowCart={setShowCart} showCart={showCart} />
         <Header setShowCart={setShowCart} />
+        <div className="mobile">
+          <Options setCategory={setCategory} />
+        </div>
         <div className="container">
           <div className="sidebar">
-            <Options setCategory={setCategory} />
+            <div className="desktop">
+              <Options setCategory={setCategory} />
+            </div>
           </div>
           <div className="content">
             <Products category={category} />

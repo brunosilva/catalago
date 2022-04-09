@@ -39,6 +39,21 @@
 }
 .App {
   position: relative;
+
+  .mobile {
+    width: 100% !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: none;
+
+    @extend .scroolbar;
+
+    @media only screen and (max-width: 1023px) {
+      top: 0;
+      position: absolute;
+      display: flex !important;
+    }
+  }
 }
 .container {
   display: flex;
@@ -46,16 +61,29 @@
   background-color: var(--yellow-300);
 
   .sidebar {
-    width: 280px;
-    height: calc(100vh - 150px);
-    overflow-y: auto;
-    overflow-x: hidden;
+    .desktop {
+      width: 280px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: none;
 
-    @extend .scroolbar;
+      @extend .scroolbar;
+
+      @media only screen and (min-width: 1023px) {
+        display: flex !important;
+      }
+    }
   }
 
   .content {
-    width: calc(100vw - 300px);
-    padding: 15px;
+    @media only screen and (min-width: 1024px) {
+      width: calc(100vw - 300px);
+      padding: 15px;
+    }
+
+    @media only screen and (max-width: 1023px) {
+      width: 100%;
+      padding: 15px;
+    }
   }
 }
